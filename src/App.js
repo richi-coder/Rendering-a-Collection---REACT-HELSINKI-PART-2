@@ -10,8 +10,16 @@ const App = (props) => {
   ) 
 
   const addNote = (event) => {
-    event.preventDefault();
-    console.log("button clicked", event.target)
+    event.preventDefault()
+    const noteObject = {
+    content: newNote,
+    date: new Date().toISOString(),
+    important: Math.random() < 0.5,
+    id: notes.length + 1,
+  }
+
+  setNotes(notes.concat(noteObject))
+  setNewNote('')
   }
 
   const handleNoteChange = (event) => {
