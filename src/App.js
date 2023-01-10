@@ -6,6 +6,11 @@ import { useState } from 'react'
 const App = (props) => {
   const [notes, setNotes] = useState(props.notes);
 
+  const addNote = (event) => {
+    event.preventDefault();
+    console.log("button clicked", event.target)
+  }
+
   return (
     <div>
       <h1>Notes</h1>
@@ -14,6 +19,10 @@ const App = (props) => {
         <Note key={note.id} note={note} />
         )}
       </ul>
+      <form onSubmit={addNote}>
+        <input />
+        <button type="submit">SAVE</button>
+      </form>
     </div>
   )
 }
