@@ -29,6 +29,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <App notes={notes} />
   </StrictMode>
 );
