@@ -4,6 +4,9 @@ import axios from 'axios'
 
 import App from './App';
 
+const promise = axios.get('http://localhost:3000/notes')
+console.log(promise)
+
 const notes = [
   {
     id: 1,
