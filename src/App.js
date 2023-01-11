@@ -42,16 +42,17 @@ fetch("http://localhost:3000/notes", {
         "Content-Type": "aplication/json"
       },
       body: JSON.stringify(noteObject)
-    }).then(response => {
-      console.log(response,"response")
-      setNotes(notes.concat(noteObject))
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log(json,"response")
+      setNotes(notes.concat(json))
       setNewNote('')
     })
 
   }
 
   const handleNoteChange = (event) => {
-    console.log(event.target.value)
     setNewNote(event.target.value)
   }
 
