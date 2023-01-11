@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import Note from "./components/Note"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = (props) => {
   const [notes, setNotes] = useState(props.notes);
