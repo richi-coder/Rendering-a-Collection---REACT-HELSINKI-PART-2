@@ -16,7 +16,7 @@ const App = (props) => {
       .then(response => response.json())
       .then(json => {
         console.log('promise fulfilled')
-        setNotes(json.data.notes)
+        setNotes(json)
         console.log(json,"aqui")
       })
   }, [])
