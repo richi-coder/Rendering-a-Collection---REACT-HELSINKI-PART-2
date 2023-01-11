@@ -10,6 +10,18 @@ const App = (props) => {
   );
   const [showAll, setShowAll] = useState(true);
 
+  useEffect(() => {
+    console.log('effect')
+    fetch('http://localhost:3001/notes')
+      .then(response => response.json())
+      .then(json => {
+        console.log('promise fulfilled')
+        setNotes(json.data)
+      })
+  }, [])
+  
+  console.log('render', notes.length, 'notes')
+
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important);
