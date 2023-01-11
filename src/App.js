@@ -19,7 +19,7 @@ const App = (props) => {
         setNotes(json)
         console.log(json,"aqui")
       })
-  }, [])
+  }, [newNote])
   
   console.log('render', notes.length, 'notes')
 
@@ -34,9 +34,8 @@ const App = (props) => {
           date: new Date().toISOString(),
           important: Math.random() < 0.5,
         }
-//    setNotes(notes.concat(noteObject))   
-//  console.log(noteObject)
-    fetch("http://localhost:3000/notes", {
+
+fetch("http://localhost:3000/notes", {
       method: "POST",
       headers: {
         "Accept": "aplication/json",
@@ -45,6 +44,7 @@ const App = (props) => {
       body: JSON.stringify(noteObject)
     }).then(response => {
       console.log(response,"response")
+      setNotes(notes.concat(noteObject))
       setNewNote('')
     })
 
