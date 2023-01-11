@@ -7,6 +7,8 @@ import App from './App';
 const promise = axios.get('http://localhost:3000/notes')
 console.log(promise)
 */
+
+/*
 const notes = [
   {
     id: 1,
@@ -27,12 +29,13 @@ const notes = [
     important: true
   }
 ]
+*/
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App notes={notes} />
+    <App />
   </StrictMode>
 );
