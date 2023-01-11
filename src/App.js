@@ -19,7 +19,7 @@ const App = (props) => {
         setNotes(json)
         console.log(json,"aqui")
       })
-  }, [newNote])
+  }, [])
   
   console.log('render', notes.length, 'notes')
 
