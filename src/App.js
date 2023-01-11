@@ -12,8 +12,14 @@ const App = (props) => {
 
   useEffect(() => {
     console.log('effect')
-    
-  },)
+    fetch("http://localhost:3000/notes")
+      .then(response => response.json())
+      .then(json => {
+        console.log('promise fulfilled')
+        setNotes(json.data.notes)
+        console.log(json,"aqui")
+      })
+  }, [])
   
   console.log('render', notes.length, 'notes')
 
