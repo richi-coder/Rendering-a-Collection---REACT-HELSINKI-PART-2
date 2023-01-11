@@ -38,8 +38,8 @@ const App = (props) => {
 fetch("http://localhost:3000/notes", {
       method: "POST",
       headers: {
-        "Accept": "aplication/json",
-        "Content-Type": "aplication/json"
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(noteObject)
     })
@@ -49,7 +49,6 @@ fetch("http://localhost:3000/notes", {
       setNotes(notes.concat(json))
       setNewNote('')
     })
-
   }
 
   const handleNoteChange = (event) => {
