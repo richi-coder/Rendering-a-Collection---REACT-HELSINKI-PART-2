@@ -33,20 +33,21 @@ const App = (props) => {
           content: newNote,
           date: new Date().toISOString(),
           important: Math.random() < 0.5,
-          //id: notes.length + 1,
         }
-
-    setNotes(notes.concat(noteObject))   
-
+//    setNotes(notes.concat(noteObject))   
+//  console.log(noteObject)
     fetch("http://localhost:3000/notes", {
       method: "POST",
       headers: {
         "Accept": "aplication/json",
         "Content-Type": "aplication/json"
       },
-      body: JSON.stringify(notes)
-    });
-  setNewNote('')
+      body: JSON.stringify(noteObject)
+    }).then(response => {
+      console.log(response,"response")
+      setNewNote('')
+    })
+
   }
 
   const handleNoteChange = (event) => {
