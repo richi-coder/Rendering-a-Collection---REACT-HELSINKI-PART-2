@@ -15,6 +15,8 @@ h1 {
   font-size: 15px;
   list-style: none;
   box-shadow: 5px 5px 5px gray;
+  width: 25%;
+  min-width: 200px;
 }
 
 .error {
