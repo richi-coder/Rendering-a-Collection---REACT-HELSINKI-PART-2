@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 // import axios from 'axios'
-
+import "./style.css"
 import App from './App';
 /*
 const promise = axios.get('http://localhost:3000/notes')
