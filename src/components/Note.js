@@ -7,7 +7,7 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
   return (
     <li className="d-flex justify-content-end flex-column note card my-2 w-25">
       <h2 className>{`Note: ${note.id}`}</h2>
-      <div className="card-title text-start h-25 mb-5 p-2">{note.content}</div>
+      <p className="card-title text-start h-25 mb-5 p-2">{note.content}</p>
       <button
       className="btn btn-primary"
       onClick={toggleImportance}>

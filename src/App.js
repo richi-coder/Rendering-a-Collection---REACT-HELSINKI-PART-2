@@ -84,7 +84,15 @@ fetch("http://localhost:3000/notes", {
   return (
     <div className="container-fluid">
       <h1>My FrontEnd Technologies</h1>
-      <Notification message={errorMessage} />
+
+      <form className="d-flex justify-content-center" onSubmit={addNote}>
+        <input
+        value={newNote}
+        onChange={handleNoteChange} />
+        <button
+        className="btn btn-success"
+        type="submit">SAVE</button>
+      </form>
       <div>
         <button onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
@@ -99,14 +107,6 @@ fetch("http://localhost:3000/notes", {
         deleteNote={() => deleteNote(note.id)} />
         )}
       </ul>
-      <form className="d-flex justify-content-center" onSubmit={addNote}>
-        <input
-        value={newNote}
-        onChange={handleNoteChange} />
-        <button
-        className="btn btn-success"
-        type="submit">SAVE</button>
-      </form>
     </div>
   )
 }
