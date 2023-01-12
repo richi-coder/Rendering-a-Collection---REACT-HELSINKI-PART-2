@@ -14,7 +14,7 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
         {labelToggle}
       </button>
       <button
-      className="btn btn-danger mx-3"
+      className="btn btn-danger my-2"
       onClick={deleteNote}
       >
         {labelDelete}
