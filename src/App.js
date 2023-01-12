@@ -14,11 +14,11 @@ const App = (props) => {
   const [errorMessage, setErrorMessage] = useState("Error messages go here!")
 
   useEffect(() => {
-    console.log(noteService
-      .readAll())
-      /*.then(json => {
+    noteService
+      .readAll()
+      .then(json => {
         setNotes(json)
-      })*/
+      })
   }, [])
   
   const notesToShow = showAll

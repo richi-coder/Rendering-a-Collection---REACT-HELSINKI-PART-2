@@ -1,7 +1,7 @@
 const baseURL = "http://localhost:3000/notes";
 
 const readAll = () => {
-  fetch(baseURL)
+  return fetch(baseURL)
       .then(response => response.json())
 }
 
