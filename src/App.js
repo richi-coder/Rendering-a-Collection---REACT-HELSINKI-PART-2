@@ -3,6 +3,8 @@ import "./style.css";
 import Note from "./components/Note"
 import { useState, useEffect } from 'react'
 import Notification from "./components/Message"
+import Button from 'react-bootstrap/Button';
+
 
 const App = (props) => {
   const [notes, setNotes] = useState([]);
@@ -84,13 +86,16 @@ fetch("http://localhost:3000/notes", {
   return (
     <div className="container-fluid">
       <h1>Notes</h1>
+      <Button>
+        hi
+      </Button>
       <Notification message={errorMessage} />
       <div>
         <button onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
         </button>
       </div>
-      <ul>
+      <ul className="list-group">
         {notesToShow.map(note =>
         <Note
         key={note.id}

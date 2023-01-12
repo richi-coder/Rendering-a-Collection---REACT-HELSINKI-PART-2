@@ -39,4 +39,3 @@ const update = (id, newObject) => {
     }, 5000);
     setNotes(notes.filter(n => n.id !== id))})
 }
-}
