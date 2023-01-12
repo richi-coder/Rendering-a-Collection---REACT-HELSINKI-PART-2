@@ -102,7 +102,7 @@ fetch("http://localhost:3000/notes", {
         deleteNote={() => deleteNote(note.id)} />
         )}
       </ul>
-      <form onSubmit={addNote}>
+      <form className="d-flex justify-content-center" onSubmit={addNote}>
         <input
         value={newNote}
         onChange={handleNoteChange} />
