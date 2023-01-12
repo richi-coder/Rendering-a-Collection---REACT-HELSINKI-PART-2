@@ -3,6 +3,7 @@ import "./style.css";
 import Note from "./components/Note"
 import { useState, useEffect } from 'react'
 import Notification from "./components/Message"
+import noteService from "./services/notes"
 
 const App = (props) => {
   const [notes, setNotes] = useState([]);
@@ -13,8 +14,8 @@ const App = (props) => {
   const [errorMessage, setErrorMessage] = useState("Error messages go here!")
 
   useEffect(() => {
-    fetch("http://localhost:3000/notes")
-      .then(response => response.json())
+    noteService
+      .readAll()
       .then(json => {
         setNotes(json)
       })
@@ -92,6 +93,7 @@ fetch("http://localhost:3000/notes", {
         className="btn btn-success ms-3"
         type="submit">SAVE</button>
       </form>
+      <Notification message={errorMessage}/>
       <div>
         <button onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
