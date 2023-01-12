@@ -3,24 +3,24 @@
 }
 
 #root {
-  background-color: black;
+  background-color: rgb(26, 26, 26);
 }
 
 h1 {
-  color: rgb(20, 71, 20);
+  color: rgb(95, 196, 255);
   font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 
 .note {
-  color: gray;
-  padding: 3px;
+  color: white;
   font-size: 15px;
   list-style: none;
   box-shadow: 5px 5px 5px gray;
   width: 25%;
   min-width: 200px;
+  background-color: #00AAFF;
 }
 
 .error {

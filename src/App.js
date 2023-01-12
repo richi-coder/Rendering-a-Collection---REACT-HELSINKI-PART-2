@@ -84,7 +84,7 @@ fetch("http://localhost:3000/notes", {
   return (
     <div className="container-fluid">
       <h1>My FrontEnd Technologies</h1>
-      <form className="d-flex justify-content-center mb-3" onSubmit={addNote}>
+      <form className="d-flex align-items-center justify-content-center mb-3" onSubmit={addNote}>
         <input
         value={newNote}
         onChange={handleNoteChange} />
