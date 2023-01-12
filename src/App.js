@@ -3,9 +3,6 @@ import "./style.css";
 import Note from "./components/Note"
 import { useState, useEffect } from 'react'
 import Notification from "./components/Message"
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 const App = (props) => {
   const [notes, setNotes] = useState([]);
@@ -93,7 +90,7 @@ fetch("http://localhost:3000/notes", {
           show {showAll ? 'important' : 'all' }
         </button>
       </div>
-      <ul className="list-group">
+      <ul className="d-flex">
         {notesToShow.map(note =>
         <Note
         key={note.id}

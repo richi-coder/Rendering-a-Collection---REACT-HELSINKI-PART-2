@@ -5,7 +5,7 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
   ? "make not important" : "make important";
   const labelDelete = "DELETE";
   return (
-    <li className="note list-item">
+    <li className="note card">
       {note.content}
       <button
       className="btn btn-primary"

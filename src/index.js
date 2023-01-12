@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 // import axios from 'axios'
 import "./style.css"
 import App from './App';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 /*
 const promise = axios.get('http://localhost:3000/notes')
 console.log(promise)
