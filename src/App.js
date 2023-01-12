@@ -11,18 +11,13 @@ const App = (props) => {
   const [showAll, setShowAll] = useState(true);
 
   useEffect(() => {
-    console.log('effect')
     fetch("http://localhost:3000/notes")
       .then(response => response.json())
       .then(json => {
-        console.log('promise fulfilled')
         setNotes(json)
-        console.log(json,"aqui")
       })
   }, [])
   
-  console.log('render', notes.length, 'notes')
-
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important);
@@ -45,7 +40,6 @@ fetch("http://localhost:3000/notes", {
     })
     .then(response => response.json())
     .then(json => {
-      console.log(json,"response")
       setNotes(notes.concat(json))
       setNewNote('')
     })
@@ -69,7 +63,6 @@ fetch("http://localhost:3000/notes", {
     })
     .then(response => response.json())
     .then(json => {
-      console.log("PUT OK");
       setNotes(notes.map(n => n.id !== id ? n : json))
     })
   }
