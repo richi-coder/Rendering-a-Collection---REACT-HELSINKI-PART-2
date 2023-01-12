@@ -63,11 +63,12 @@ const App = (props) => {
       setNotes(notes.filter(n => n.id !== id))})
   }
 
-  const deleteNote = (id) => {
+  const deleting = (id) => {
     noteService
     .deleteNote(id)
     .then(json => {
-      setNotes(notes.filter(n => n.id !== id))
+      console.log(json)
+      //setNotes(notes.filter(n => n.id !== id))
     })
   } 
 
@@ -94,7 +95,7 @@ const App = (props) => {
         key={note.id}
         note={note}
         toggleImportance={() => toggleImportanceOf(note.id)}
-        deleteNote={() => deleteNote(note.id)} />
+        deleteNote={() => deleting(note.id)} />
         )}
       </ul>
     </div>
