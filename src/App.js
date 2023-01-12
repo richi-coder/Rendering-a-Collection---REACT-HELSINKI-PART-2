@@ -4,6 +4,7 @@ import Note from "./components/Note"
 import { useState, useEffect } from 'react'
 import Notification from "./components/Message"
 import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = (props) => {
