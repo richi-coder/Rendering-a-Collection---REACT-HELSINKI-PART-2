@@ -67,6 +67,11 @@ fetch("http://localhost:3000/notes", {
       },
       body: JSON.stringify(changedNote)
     })
+    .then(response => response.json())
+    .then(json => {
+      console.log("PUT OK");
+      setNotes(notes.map(n => n.id !== id ? n : json))
+    })
   }
 
   return (
