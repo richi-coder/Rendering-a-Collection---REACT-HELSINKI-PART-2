@@ -66,7 +66,9 @@ const App = (props) => {
   const deleteNote = (id) => {
     noteService
     .deleteNote(id)
-    .then(json => console.log(json))
+    .then(json => {
+      setNotes(notes.filter(n => n.id !== id))
+    })
   } 
 
   return (
