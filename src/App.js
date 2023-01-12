@@ -32,16 +32,8 @@ const App = (props) => {
           date: new Date().toISOString(),
           important: Math.random() < 0.5,
         }
-
-fetch("http://localhost:3000/notes", {
-      method: "POST",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(noteObject)
-    })
-    .then(response => response.json())
+  noteService
+    .create(noteObject)
     .then(json => {
       setNotes(notes.concat(json))
       setNewNote('')

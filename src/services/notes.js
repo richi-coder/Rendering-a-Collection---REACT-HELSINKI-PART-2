@@ -1,12 +1,12 @@
 const baseURL = "http://localhost:3000/notes";
 
-const readAll = () => {
+const readAll = async () => {
   return fetch(baseURL)
       .then(response => response.json())
 }
 
-const create = (newObject) => {
-  fetch(baseURL, {
+const create = async (newObject) => {
+  return fetch(baseURL, {
       method: "POST",
       headers: {
         "Accept": "application/json",
