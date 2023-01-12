@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import Note from "./components/Note"
 import { useState, useEffect } from 'react'
+import Message from "./components/Message"
 
 const App = (props) => {
   const [notes, setNotes] = useState([]);
@@ -9,6 +10,7 @@ const App = (props) => {
     'a new note...'
   );
   const [showAll, setShowAll] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("Some error happens")
 
   useEffect(() => {
     fetch("http://localhost:3000/notes")
@@ -71,6 +73,7 @@ fetch("http://localhost:3000/notes", {
   return (
     <div>
       <h1>Notes</h1>
+      <Notification message={errorMessage} />
       <div>
         <button onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
