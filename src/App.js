@@ -10,7 +10,7 @@ const App = (props) => {
     'a new note...'
   );
   const [showAll, setShowAll] = useState(true);
-  const [errorMessage, setErrorMessage] = useState("Some error happens")
+  const [errorMessage, setErrorMessage] = useState("Error messages go here!")
 
   useEffect(() => {
     fetch("http://localhost:3000/notes")
