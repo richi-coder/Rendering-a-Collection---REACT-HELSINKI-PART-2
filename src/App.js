@@ -95,7 +95,7 @@ const App = (props) => {
         key={note.id}
         note={note}
         toggleImportance={() => toggleImportanceOf(note.id)}
-        deleteNote={() => deleting(note.id)} />
+        deleting={() => deleting(note.id)} />
         )}
       </ul>
     </div>

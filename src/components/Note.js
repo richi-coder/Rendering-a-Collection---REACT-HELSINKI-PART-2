@@ -1,6 +1,6 @@
 import React from "react";
 
-const Note = ({ note, toggleImportance, deleteNote }) => {
+const Note = ({ note, toggleImportance, deleting }) => {
   const labelToggle = note.important
   ? "make not important" : "make important";
   const labelDelete = "DELETE";
@@ -15,7 +15,7 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
       </button>
       <button
       className="btn btn-danger my-2"
-      onClick={deleteNote}
+      onClick={deleting}
       >
         {labelDelete}
       </button>
