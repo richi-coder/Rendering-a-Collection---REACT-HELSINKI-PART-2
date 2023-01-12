@@ -67,7 +67,14 @@ fetch("http://localhost:3000/notes", {
     .then(json => {
       setNotes(notes.map(n => n.id !== id ? n : json))
     })
-    .catch(error => setNotes(notes.filter(n => n.id !== id)))
+    .catch(error => {
+      setErrorMessage(
+        `Note '${note.content}' was already removed from server`
+      );
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000);
+      setNotes(notes.filter(n => n.id !== id))})
   }
 
   return (
