@@ -48,15 +48,9 @@ const App = (props) => {
     const url = `http://localhost:3000/notes/${id}`;
     const note = notes.find(n => n.id === id);
     const changedNote = {...note, important: !note.important}
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(changedNote)
-    })
-    .then(response => response.json())
+    
+  noteService
+    .update(id,changedNote)
     .then(json => {
       setNotes(notes.map(n => n.id !== id ? n : json))
     })

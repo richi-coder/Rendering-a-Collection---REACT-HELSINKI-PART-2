@@ -17,8 +17,8 @@ const create = async (newObject) => {
     .then(response => response.json())
 }
 
-const update = (id, newObject) => {
-  fetch(`${baseURL}/${id}`, {
+const update = async (id, newObject) => {
+  return fetch(`${baseURL}/${id}`, {
     method: "PUT",
     headers: {
       "Accept": "application/json",
@@ -27,17 +27,6 @@ const update = (id, newObject) => {
     body: JSON.stringify(newObject)
   })
   .then(response => response.json())
-  .then(json => {
-    setNotes(notes.map(n => n.id !== id ? n : json))
-  })
-  .catch(error => {
-    setErrorMessage(
-      `Note '${note.content}' was already removed from server`
-    );
-    setTimeout(() => {
-      setErrorMessage(null)
-    }, 5000);
-    setNotes(notes.filter(n => n.id !== id))})
 }
 
 export default {
