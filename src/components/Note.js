@@ -5,8 +5,8 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
   ? "make not important" : "make important";
   const labelDelete = "DELETE";
   return (
-    <li className="note card">
-      <div className="card-title">{note.content}</div>
+    <li className="d-flex justify-content-end flex-column note card my-2 w-25">
+      <div className="card-title text-start h-25 mb-5">{note.content}</div>
       <button
       className="btn btn-primary"
       onClick={toggleImportance}>
