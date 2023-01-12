@@ -77,6 +77,10 @@ fetch("http://localhost:3000/notes", {
       setNotes(notes.filter(n => n.id !== id))})
   }
 
+  const deleteNote = (id) => {
+    console.log("DELETING...")
+  } 
+
   return (
     <div className="container-fluid">
       <h1>Notes</h1>
@@ -91,7 +95,8 @@ fetch("http://localhost:3000/notes", {
         <Note
         key={note.id}
         note={note}
-        toggleImportance={() => toggleImportanceOf(note.id)} />
+        toggleImportance={() => toggleImportanceOf(note.id)}
+        deleteNote={() => deleteNote(note.id)} />
         )}
       </ul>
       <form onSubmit={addNote}>
