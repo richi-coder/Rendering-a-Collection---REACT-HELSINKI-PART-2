@@ -78,7 +78,7 @@ fetch("http://localhost:3000/notes", {
   }
 
   return (
-    <div>
+    <div className="container-fluid">
       <h1>Notes</h1>
       <Notification message={errorMessage} />
       <div>
