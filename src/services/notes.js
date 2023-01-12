@@ -29,6 +29,10 @@ const update = async (id, newObject) => {
   .then(response => response.json())
 }
 
+const deleting = async (id, newObject) => {
+  return fetch()
+}
+
 export default {
   readAll,
   create,
