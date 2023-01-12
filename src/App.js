@@ -90,7 +90,7 @@ fetch("http://localhost:3000/notes", {
           show {showAll ? 'important' : 'all' }
         </button>
       </div>
-      <ul className="d-flex flex-row p-3 justify-content-around">
+      <ul className="d-flex flex-row p-3 flex-wrap justify-content-around">
         {notesToShow.map(note =>
         <Note
         key={note.id}
