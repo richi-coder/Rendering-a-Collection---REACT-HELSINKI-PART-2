@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import Note from "./components/Note"
 import { useState, useEffect } from 'react'
-import Message from "./components/Message"
+import Notification from "./components/Message"
 
 const App = (props) => {
   const [notes, setNotes] = useState([]);
