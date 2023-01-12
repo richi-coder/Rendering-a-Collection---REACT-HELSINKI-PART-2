@@ -30,3 +30,7 @@ h1 {
 .btn-danger, .btn-primary {
   float: right;
 }
+
+.card-title {
+  overflow: auto;
+}
