@@ -13,7 +13,7 @@ h1 {
   color: gray;
   padding: 3px;
   font-size: 15px;
-  list-style:square;
+  list-style: none;
 }
 
 .error {
