@@ -32,12 +32,12 @@ const App = (props) => {
           date: new Date().toISOString(),
           important: Math.random() < 0.5,
         }
-  noteService
-    .create(noteObject)
-    .then(json => {
-      setNotes(notes.concat(json))
-      setNewNote('')
-    })
+    noteService
+      .create(noteObject)
+      .then(json => {
+        setNotes(notes.concat(json))
+        setNewNote('')
+      })
   }
 
   const handleNoteChange = (event) => {
@@ -45,7 +45,6 @@ const App = (props) => {
   }
 
   const toggleImportanceOf = (id) => {
-    const url = `http://localhost:3000/notes/${id}`;
     const note = notes.find(n => n.id === id);
     const changedNote = {...note, important: !note.important}
     
@@ -65,7 +64,9 @@ const App = (props) => {
   }
 
   const deleteNote = (id) => {
-    console.log("DELETING...")
+    noteService
+    .deleteNote(id)
+    .then(json => console.log(json))
   } 
 
   return (

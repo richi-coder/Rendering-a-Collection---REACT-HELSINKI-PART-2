@@ -29,12 +29,16 @@ const update = async (id, newObject) => {
   .then(response => response.json())
 }
 
-const deleting = async (id, newObject) => {
-  return fetch()
+const deleteNote = async (id) => {
+  return fetch(`${baseURL}/${id}`, {
+    method: "DELETE"
+  })
+  .then(response => response.json())
 }
 
 export default {
   readAll,
   create,
-  update
+  update,
+  deleteNote
 }
