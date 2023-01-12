@@ -87,9 +87,6 @@ fetch("http://localhost:3000/notes", {
   return (
     <div className="container-fluid">
       <h1>Notes</h1>
-      <Button>
-        hi
-      </Button>
       <Notification message={errorMessage} />
       <div>
         <button onClick={() => setShowAll(!showAll)}>

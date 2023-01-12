@@ -25,3 +25,7 @@ h1 {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.btn-danger, .btn-primary {
+  float: right;
+}
