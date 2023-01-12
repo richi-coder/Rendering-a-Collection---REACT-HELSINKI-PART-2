@@ -8,10 +8,12 @@ const Note = ({ note, toggleImportance, deleteNote }) => {
     <li className="note list-item">
       {note.content}
       <button
+      className="btn btn-primary"
       onClick={toggleImportance}>
         {labelToggle}
       </button>
       <button
+      className="btn btn-danger"
       onClick={deleteNote}
       >
         {labelDelete}

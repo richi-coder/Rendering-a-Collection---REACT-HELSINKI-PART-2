@@ -109,7 +109,9 @@ fetch("http://localhost:3000/notes", {
         <input
         value={newNote}
         onChange={handleNoteChange} />
-        <button type="submit">SAVE</button>
+        <button
+        className="btn btn-success"
+        type="submit">SAVE</button>
       </form>
     </div>
   )
