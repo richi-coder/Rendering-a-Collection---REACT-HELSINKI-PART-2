@@ -72,7 +72,7 @@ const App = (props) => {
   } 
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid d-flex flex-column align-items-center">
       <h1>My FrontEnd Technologies</h1>
       <form className="d-flex align-items-center justify-content-center mb-3" onSubmit={addNote}>
         <input
@@ -83,11 +83,11 @@ const App = (props) => {
         type="submit">SAVE</button>
       </form>
       <Notification message={errorMessage}/>
-      <div>
-        <button onClick={() => setShowAll(!showAll)}>
+      <button
+        className="btn btn-secondary w-25"
+        onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
-        </button>
-      </div>
+      </button>
       <ul className="d-flex flex-row p-3 flex-wrap justify-content-around gap-2">
         {notesToShow.map(note =>
         <Note
