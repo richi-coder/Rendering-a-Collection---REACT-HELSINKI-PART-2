@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/notes";
+const baseURL = "https://crudcrud.com/api/9dfc780cf1254a4d92d8d97595fb65e2/notes";
 
 const readAll = async () => {
   return fetch(baseURL)
